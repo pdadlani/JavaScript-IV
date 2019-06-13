@@ -53,22 +53,22 @@ class GameObject {
     this.createdAt = attributes.createdAt;
     this.name = attributes.name;
     this.dimensions = attributes.dimensions;
-  };
+  }
   destroy() {
     return `${this.name} was removed from the game.`;
-  };
-};
+  }
+}
 
 
 class CharacterStats extends GameObject {
   constructor(attributes) {
     super(attributes);
     this.healthPoints = attributes.healthPoints;
-  };
+  }
   takeDamage() {
     return `${this.name} took damage.`;
-  };
-};
+  }
+}
 
 
 class Humanoid extends CharacterStats {
@@ -77,34 +77,34 @@ class Humanoid extends CharacterStats {
     this.team = attributes.team;
     this.weapons = attributes.weapons;
     this.language = attributes.language;
-  };
+  }
   greet() {
     return `${this.name} offers a greeting in ${this.language}.`;
-  };
-};
+  }
+}
 
 
 class Villain extends Humanoid {
   constructor(attributes) {
     super(attributes);
-  };
+  }
   losePoints() {
     if (this.healthPoints < 0) {
       this.destroy();
       console.log(`${this.name} was destroyed.`)
     } else {
       this.healthPoints -= 3;
-    };
+    }
     return this.healthPoints;
-  };
-};
+  }
+}
 
 
 class Hero extends Humanoid {
   constructor(attributes) {
     super(attributes);
-  };
-};
+  }
+}
 
 
 // Test you work by un-commenting these 3 objects and the list of console logs below:
