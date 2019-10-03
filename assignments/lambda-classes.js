@@ -49,11 +49,12 @@ class Student extends Person {
     return `${this.name} has begun sprint challenge on ${subject}`;
   }
   graduate() {
-    if (this.grade >= 70) {
-      return `Congratulations, ${this.name}! You graduated with a final score of ${this.grade}%!`
-    } else {
-      return `Unfortunately, ${this.name}, you need to revise your projects to bring your final grade above 70%.`;
-    }
+    return (this.grade >= 70 ? `Congratulations, ${this.name}! You graduated with a final score of ${this.grade}%!` : `Unfortunately, ${this.name}, you need to revise your projects to bring your final grade above 70%.`);
+    // if (this.grade >= 70) {
+    //   return `Congratulations, ${this.name}! You graduated with a final score of ${this.grade}%!`
+    // } else {
+    //   return `Unfortunately, ${this.name}, you need to revise your projects to bring your final grade above 70%.`;
+    // }
   }
 }
 
